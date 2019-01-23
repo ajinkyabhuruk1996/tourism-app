@@ -21,8 +21,10 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+//http://13.234.50.32:8080/api/customers
+//http://localhost:8080/api/customers
 export class CustomerService {
-  private customersUrl = 'http://localhost:8080/api/customers';  // URL to web api
+  private customersUrl = 'http://13.234.50.32:8080/api/customers';  // URL to web api
   constructor( 
     private http: HttpClient
   ) { }

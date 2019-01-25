@@ -13,6 +13,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Customer } from './customer';
+import { environment } from '../../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -24,7 +25,9 @@ const httpOptions = {
 //http://13.234.50.32:8080/api/customers
 //http://localhost:8080/api/customers
 export class CustomerService {
-  private customersUrl = 'http://13.234.50.32:8080/api/customers';  // URL to web api
+  baseUrl = environment.apiURL;
+
+  private customersUrl = environment.apiURL+'/customers';//'http://13.234.50.32:8080/api/customers';  // URL to web api
   constructor( 
     private http: HttpClient
   ) { }

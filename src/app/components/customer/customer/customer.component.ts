@@ -15,6 +15,8 @@
 // }
 
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 
@@ -25,23 +27,30 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./customer.component.css']
 })
 
-export class CustomerComponent  implements OnInit {
+export class CustomerComponent implements OnInit {
 
   customers: Customer[];
 
-  constructor(private customerService: CustomerService) {}
+  //constructor(private customerService: CustomerService) { }
+  constructor(
+    private customerService: CustomerService,
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
-     this.getCustomers();
+    this.getCustomers();
   }
 
   getCustomers() {
     return this.customerService.getCustomers()
-               .subscribe(
-                 customers => {
-                  console.log(customers);
-                  this.customers = customers
-                 }
-                );
- }
+      .subscribe(
+        customers => {
+          console.log(customers);
+          this.customers = customers
+        }
+      );
+  }
+  goBack(): void {
+    this.location.back();
+  }
 }

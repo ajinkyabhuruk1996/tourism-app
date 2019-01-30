@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Development build
-ng build --prod --base-href /tourism/
+ng build --prod --base-href /
 
 ## Code scaffolding
 
@@ -67,3 +67,32 @@ ng generate component components/customer/customer-details"
 	npm install --save -dev @angular/forms
 	npm i --save -dev @angular/common
 
+
+A.	Infrastructure setup steps:
+•	DNS from godaddy
+•	AWS account –done
+•	Linux server creation 
+•	Filzilla installation for FTP access
+•	Putty and Puttygen installation for connecting to Linux instances -Done
+•	Creating Angular 6 project -done.
+•	Creating NODE REST project -done
+•	CORS enabling for production mode - done.
+
+==============================================================================
+B.	Angular project setup steps:
+•	Login functionality
+Done: 
+1.	Login page
+2.	Register user page
+3.	Todo: Implement server call for login
+
+•	Routing 
+Done:
+1.	Basic routing for login 
+2.	404 error handle ; useHash in routing used
+3.	Browser history for routing done
+
+
+
+========================References==============================================
+https://stackblitz.com/edit/angular-6-custom-modal-dialog?file=app%2F_directives%2Fmodal.component.ts

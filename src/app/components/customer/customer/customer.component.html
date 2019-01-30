@@ -1,8 +1,11 @@
-<p>
-  customer works!
-</p>
 <h5>All Customers</h5>
 <div *ngFor="let cust of customers">
   <a [routerLink]="['/customers', cust.id]" style="color:black">
     <span class="badge badge-dark">{{cust.id}}</span> -> {{ cust.firstname }}</a>
+</div>
+
+<div>
+  <div class="btn-group btn-group-sm">
+    <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>    
+  </div>
 </div>

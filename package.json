@@ -7,9 +7,7 @@
     "startbat": "local.start.bat",
     "bat-in-sub-dir": "cd a/b/ && say-hello.bat",
     "cmd-in-sub-dir": "cd a/b/ && say-hello.cmd",
-    "build": "ng build",
-    "serverstart": "nodemon ./server/index.js",
-    "serverstart2": "nodemon ./server/server.js",
+    "build": "ng build",   
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

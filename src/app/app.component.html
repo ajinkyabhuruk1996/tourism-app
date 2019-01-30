@@ -1,12 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <app-mainview></app-mainview>
-</div>
-<!-- <router-outlet></router-outlet> -->
 
+<div class="jumbotron">
+  <div class="container">    
+     <div class="row">
+            <div class="col-sm-12">
+              <alert></alert>
+              <router-outlet></router-outlet>
+              <!-- This is main router oultet which initially shows login pages -->
+          </div>          
+      </div>
+  </div>
+</div>
+
+                    
+
+
+<!-- <router-outlet></router-outlet> -->
 <!-- <div class="container">
   <div class="row">
     <div class="col-sm-4">  

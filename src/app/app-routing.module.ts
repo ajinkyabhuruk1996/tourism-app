@@ -15,25 +15,39 @@ import {CustomerComponent} from '../app/components/customer/customer/customer.co
 //import { CustomerComponent } from '../../comcustomer/customer.component';
 import { AddCustomerComponent } from '../app/components/customer/add-customer/add-customer.component';
 import { CustomerDetailsComponent } from '../app/components/customer/customer-details/customer-details.component';
+
+
+//imports for login related components
+import {HomeComponent} from './views/loginview/home';
+import {LoginComponent} from './views/loginview/login';
+import {RegisterComponent} from './views/loginview/register';
+import {AuthGuard} from './views/loginview/_guards';
  
 const routes: Routes = [
-   { 
+   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+   { path: 'login', component: LoginComponent },
+   { path: 'register', component: RegisterComponent },   { 
      path: 'customers', 
-     component: CustomerComponent 
+     component: CustomerComponent ,
+     canActivate: [AuthGuard]
    },
    { 
      path: 'customer/add', 
-     component: AddCustomerComponent 
+     component: AddCustomerComponent,
+     canActivate: [AuthGuard] 
    },
    { 
      path: 'customers/:id', 
-     component: CustomerDetailsComponent 
+     component: CustomerDetailsComponent,
+     canActivate: [AuthGuard] 
    },
    { 
      path: '', 
-     redirectTo: 'customers', 
+     redirectTo: 'login', 
      pathMatch: 'full'
-   }, 
+   },
+   // otherwise redirect to home
+   { path: '**', redirectTo: '' } 
 ];
  
 @NgModule({

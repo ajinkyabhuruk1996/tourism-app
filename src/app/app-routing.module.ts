@@ -49,9 +49,11 @@ const routes: Routes = [
    // otherwise redirect to home
    { path: '**', redirectTo: '' } 
 ];
- 
-@NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+
+
+//useHash: true when 404 occurs ,it will redirect to base url appending #. Need more info on this-ajinkya
+@NgModule({  
+  imports: [ RouterModule.forRoot(routes,{ useHash: true }) ],
   exports: [ RouterModule ]
 })
  
